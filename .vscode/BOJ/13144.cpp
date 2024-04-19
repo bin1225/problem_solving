@@ -19,18 +19,16 @@ void Solve() {
         cin>>arr[i];
     }
 
-    s= 1; e = 1;
+    s= e = 1;
     while(e<=N+1){
         if(cnt[arr[e]] == 0 && e != N+1){
             cnt[arr[e]]++;
         }
         else{
-            for(int i=1; i<=e-s; i++) answer+=i;
-            
+            answer+= (double)(e-s + 1)*(e-s)/2;
             while(cnt[arr[e]]!=0 && s<e) cnt[arr[s++]]--;
             cnt[arr[e]]++;
-            if(e!=N+1) for(int i=1; i<=e-s; i++) answer-=i;
-            //cout<<"s: "<<s<< " e: "<<e<<"  answer: "<<answer<<endl;
+            if(e!=N+1) answer-= (double)(e-s + 1)*(e-s)/2;
         }
         e++;
     }
