@@ -10,12 +10,12 @@ using namespace std;
 
 int N, C, M;
 int cnt[2020];
+
 struct Box{
     int start, end, count;
 };
 
 bool cmp(const Box& a, const Box& b){
-    if(a.end == b.end) return a.start < b.start;
     return a.end < b.end;
 }
 
