@@ -35,7 +35,6 @@ void Solve() {
 
     long long songs = 0;
     int gitarCnt, songCnt;
-    //for(int i=0; i<N; i++) cout<<gitars[i]<<endl;
     
     for(int comb=0; comb<(1<<N); comb++){
 
