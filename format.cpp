@@ -1,13 +1,9 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include<bits/stdc++.h>
 
 #define endl "\n"
+#define ll long long
 
 using namespace std;
-
-int N;
 
 void Solve() {
 

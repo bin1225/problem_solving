@@ -1,54 +1,30 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <limits.h>
+#include<bits/stdc++.h>
 
 #define endl "\n"
-#define INF 987654321
+#define ll long long
+
 using namespace std;
 
-int N;
-int W[17][17];
-int dist[16][1<<16];
-
-int dfs(int now, int bitmask){
-   if(bitmask == (1<<N)-1){
-    if(W[now][0]>0){
-        return W[now][0];
-//        dist[0][bitmask] = min(dist[0][bitmask],dist[now][bitmask]+W[now][0]);
-    }
-    return INF;
-   }
-
-    if(dist[now][bitmask]!=-1) return dist[now][bitmask];
-    dist[now][bitmask] = INF;
-   for(int i=0; i<N; i++){
-    if((W[now][i]<=0||bitmask & (1<<i))) continue;
-    //if(dist[i][bitmask|(1<<i)] <= dist[now][bitmask] + W[now][i]) continue;
-    
-    dist[now][bitmask] = min(dist[now][bitmask] , W[now][i] + dfs(i,(bitmask|(1<<i))));
-   
-   }
-
-   return dist[now][bitmask];
-}
-
+int C[101010];
 
 void Solve() {
-    cin>>N;
-
-    for(int i=0; i<N; i++){
-        for(int j=0; j<N; j++){
-            cin>>W[i][j];
-        }
+    int N; cin>>N;
+    int a,b;
+    for(int i=0; i<N-1; i++){
+        cin>>a>>b;
+        C[a]++; C[b]++;
     }
 
-    fill(&dist[0][0], &dist[0][0] + 16 * (1<<16), -1);
-    
-    cout<<dfs(0,1);
-    
-    //cout<<dist[0][(1<<N)-1];
+    int q; cin>>q;
+    int t,k;
+    for(int i=0; i<q; i++){
+        cin>>t>>k;
+        if(t==1){
+            if(C[k]>=2) cout<<"yes"<<endl;
+            else cout<<"no"<<endl;
+        }
+        else cout<<"yes"<<endl;
+    }
 }
 
 
