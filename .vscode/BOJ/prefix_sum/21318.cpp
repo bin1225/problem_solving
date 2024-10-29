@@ -19,6 +19,7 @@ void Solve() {
         PS[i] = PS[i-1];
         if(A[i]>A[i+1]) PS[i]++;
     }
+    
     int Q,x,y,cnt; cin>>Q;
     vector<int> ans;
     for(int i=1; i<=Q; i++){
