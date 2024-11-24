@@ -1,1 +1,0 @@
-{"name":"Local: solution","url":"c:\\Users\\kkb00\\Desktop\\algorithm\\solution.cpp","tests":[{"id":1727980420542,"input":"5\n1 2\n2 3\n3 4\n4 5\n4\n1 1\n1 2\n2 1\n2 2","output":"no\nyes\nyes\nyes"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\kkb00\\Desktop\\algorithm\\solution.cpp","group":"local","local":true}
