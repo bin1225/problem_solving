@@ -18,14 +18,14 @@ int main() {
     }
 
     sort(v.begin(), v.end());
-    ll now = 1;
+    ll now = 0;
     for (int i = 0; i < n; i++) {
-        if(v[i]>now)
+        if(v[i]>now+1)
             break;
         else {
             now += v[i];
         }
     }
-    cout << now;
+    cout << now+1;
     return 0;
 }
