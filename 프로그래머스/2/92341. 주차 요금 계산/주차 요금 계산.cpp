@@ -3,7 +3,7 @@
 #include <map>
 #include <sstream>
 #include <iostream>
-#include <cmath>
+
 using namespace std;
 
 int calculateTime(string time) {
@@ -39,7 +39,8 @@ vector<int> solution(vector<int> fees, vector<string> records) {
     for(auto m: totalTime) {
         amount = fees[1];
         m.second -= fees[0];
-        if(m.second > 0) amount += ceil((double)m.second/fees[2]) * fees[3];           answer.push_back(amount);        
+        if(m.second > 0) amount += (m.second+fees[2]-1)/fees[2] * fees[3];           
+        answer.push_back(amount);        
     }
     
     
