@@ -4,6 +4,16 @@ using namespace std;
 int N;
 int A[22][22];
 
+int countCoinInArea(int y, int x) {
+    int cnt = 0;
+    for(int i=y; i<y+3; i++) {
+        for(int j=x; j<x+3; j++) {
+            cnt += A[i][j];
+        }
+    }
+    return cnt;
+}
+
 int main() {
     cin>>N;
     for(int i=0; i<N; i++) {
@@ -15,13 +25,7 @@ int main() {
     int answer = 0;
     for(int i=0; i+3<=N; i++) {
         for(int j=0; j+3<=N; j++) {
-            int cnt = 0;
-            for(int y=i; y<i+3; y++) {
-                for(int x=j; x<j+3; x++) {
-                    cnt += A[y][x];
-                }
-            }
-            answer = max(answer, cnt);
+            answer = max(answer, countCoinInArea(i,j));
         }
     }
 
