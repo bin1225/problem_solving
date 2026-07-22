@@ -9,6 +9,7 @@ int A[11][11];
 bool visited[11];
 
 void search(int now, int cost, int cnt) {
+    if(cost >= answer) return;
     if(cnt >= N) {
         if(now != 0) return;
         answer = min(answer, cost);
